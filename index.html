@@ -3,10 +3,13 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8" />
-        <title>img.azyobuzi.net - Make You Hungry</title>
+        <title>img.azyobuzi.net - Make Your Coding Looser</title>
         <!--[if lt IE 9]>
             <script src="Scripts/html5shiv.js"></script>
         <![endif]-->
+        <link rel="stylesheet" href="Content/bootstrap.min.css" />
+        <link rel="stylesheet" href="Content/style.css" />
+        <link rel="stylesheet" href="Content/top.css" />
         <script type="text/javascript">
 
             var _gaq = _gaq || [];
@@ -28,122 +31,102 @@
         <meta property="og:description" content="APIs for getting Expanded Image URIs on Too Many Image Sharing Services" />
         <link rel="alternate" hreflang="ja" href="http://img.azyobuzi.net/" />
         <link rel="alternate" hreflang="en" href="http://img.azyobuzi.net/index_en.html" />
-        <style>
-            body {
-                font-family: Meiryo, sans-serif;
-                margin: 0;
-                padding: 0;
-            }
-            header {
-                background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20130502/20130502184900.jpg);
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                position: fixed;
-                text-align: center;
-                z-index: 0;
-                width: 100%;
-                height: 100%;
-                color: white;
-                text-shadow: 4px 4px 2px #999999;
-                font-size: 80px;
-                display: table;
-            }
-            header > div {
-                display: table-cell;
-                vertical-align: middle;
-            }
-            #container {
-                z-index: 1;
-                position: absolute;
-                top: 100%;
-                width: 100%;
-            }
-            section {
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                margin-top: 30px;
-                padding-top: 80px;
-                padding-bottom: 80px;
-            }
-            .content {
-                margin-left: auto;
-                margin-right: auto;
-                width: 700px;
-                background-color: rgba(255,255,255,0.6);
-                color: #111;
-                font-size: 25px;
-                padding: 15px 30px 15px 30px;
-            }
-            .content h1 {
-                font-size: 48px;
-            }
-        </style>
     </head>
     <body>
         <header>
+            <div id="title">img.azyobuzi.net</div>
+            <div id="phrase">Make Your Coding Looser</div>
             <div>
-                <div id="title">img.azyobuzi.net</div>
-                <div id="shout">Make You Hungry</div>
+                <svg id="desc-line"><line x1="0" y1="14" x2="50" y2="14" stroke-width="2" stroke="white" stroke-opacity="1" /></svg>
+                <i id="desc">img.azyobuzi.net は web 上に数ある画像共有サービスから<br />画像の URI を取得する API を提供します。</i>
             </div>
         </header>
-        <div id="container">
-            <section style="background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20140325/20140325192052.jpg); margin-top: -50px">
-                <div class="content">
-                    <h1>What is img.azyobuzi.net ?</h1>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <ul class="nav">
+                    <li class="active"><a href="./">Home</a></li>
+                    <li><a href="developers.html">API Document</a></li>
+                    <li><a href="http://azyobuzi.net/donation.html">Donation</a></li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li><a href="index_en.html" lang="en" hreflang="en">English</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div id="container" class="container-fluid">
+            <div id="content">
+                <section>
+                    <h1>img.azyobuzi.net へようこそ！</h1>
+                    <p>img.azyobuzi.net は画像共有サービスに投稿された画像にアクセスする最適なソリューションです。サムネイルからオリジナルサイズの画像まで取得できるので、様々な用途にご利用いただけます。</p>
+                </section>
+
+                <!-- admax -->
+                <script type="text/javascript" src="http://adm.shinobi.jp/s/bb236a451b59de933ca77e0878d16c4b"></script>
+                <!-- admax -->
+
+                <section>
+                    <h1>特徴</h1>
+                    <dl>
+                        <dt>正規表現の公開。</dt>
+                        <dd><img src="Content/images/regex.png" width="500" height="170" alt="正規表現の例" /></dd>
+                        <dd>各画像共有サービスの Permalink の正規表現を公開しているので、クライアントでの処理が簡単に出来ます。</dd>
+                        <dt>画像へ直接リダイレクト。</dt>
+                        <dd><img src="Content/images/redirect.png" width="500" height="150" alt="リダイレクトの例" /></dd>
+                        <dd>パラメータに URI をつけるだけで画像へ直接リダイレクトされるので、リッチクライアントでも web でも、開発者以外でも簡単にご利用いただけます。</dd>
+                        <dt>3 種類のサイズを用意。</dt>
+                        <dd><img src="Content/images/size.jpg" width="500" height="217" alt="サイズのイメージ" /><br><span style="font-size: 10px">※イメージです。実際のこの写真はもっと大きさに差がありました。</span></dd>
+                        <dd>azyobuzin の独断と偏見で 3 種類のサイズをご用意しました。クライアントでのサムネイル表示から、 lightbox まで幅広くご利用いただけます。</dd>
+                        <dt>オープンソースプロジェクト。</dt>
+                        <dd><img src="Content/images/GitHub.png" width="500" height="205" alt="GitHub" /></dd>
+                        <dd>MIT License の下でソースコードを公開していますので、類似サービスやミラーサイトの作成が簡単に出来ます。</dd>
+                        <dd><a href="https://github.com/azyobuzin/img.azyobuzi.net">azyobuzin/img.azyobuzi.net on GitHub</a></dd>
+                    </dl>
+                </section>
+
+                <section>
+                    <h1>はじめよう</h1>
                     <p>
-                        img.azyobuzi.net はヒトという生物の日常生活に欠かすことのできない「食」にフォーカスを当て、
-                        食の楽しさ、おいしさ、そしてその欲求を忘れないために、常にあなたに最高の「食」の風景をお届けするサービスです。
+                        あなたのコードに、ほんの数行書き加えるだけで、サムネイル表示ができるリッチなアプリケーションができあがります。
+                        <a href="developers.html">API ドキュメント</a>を読んで、作業を開始しましょう。
                     </p>
-                    <p>以下では、 img.azyobuzi.net の取り組みの大まかな特徴を説明します。</p>
-                </div>
-            </section>
-            <section style="background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20120630/20120630165455.jpg)">
-                <div class="content">
-                    <h1>「食」の風景を大切に保管・共有できるサービスをピックアップ</h1>
-                    <p>
-                        人々は、みんなで食べても、ひとりで食べても楽しい食事をほかの人に共有したくなる生物です。
-                        その習性を最大限に活かそうと、インターネットで食の風景を共有できるサービスは無数にあります。
-                        私たちはその無数のサービスをひとつにまとめ、そして扱いやすい形にしました。
-                    </p>
-                </div>
-            </section>
-            <section style="background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20130420/20130420140426.jpg)">
-                <div class="content">
-                    <h1>SNS クライアントに活用しよう</h1>
-                    <p>
-                        SNS ではかつてないスピードで食の風景が発信され続けています。
-                        しかしクライアントアプリケーションでは、共有サービスの多さから、対応を断念していることもあるでしょう。
-                        そこで、 img.azyobuzi.net が提供する M-API(Meshitero Application Programming Interface) を利用することで迅速かつ簡単に画像のプレビューを行うことができるようになります。
-                        これでもうブラウザを開く手間も省け、効果的に食への欲求を膨らますことができるようになるわけです。
-                    </p>
-                </div>
-            </section>
-            <section style="background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20131219/20131219205523.jpg)">
-                <div class="content">
-                    <h1>私たちはオープンです</h1>
-                    <p>
-                        img.azyobuzi.net はオープンソースに積極的に取り組んでいます。
-                        ソースの入れものを開けっ放しにすることは、倒すリスクがある反面、さまざまな人に使ってもらうことができるわけです。
-                        ぜひ、醤油Hubでコントリビュートしてください。
-                    </p>
-                </div>
-            </section>
-            <section style="background-image: url(http://f.st-hatena.com/images/fotolife/a/azyobuzin/20130808/20130808143024.jpg)">
-                <div class="content">
-                    <h1>さあ、今すぐ始めましょう</h1>
-                    <p>
-                        <a href="developers.html">M-API ドキュメント</a>を読めば、あなたも食文化の最先端を見ることができます。今すぐクリック！
-                    </p>
-                    <p>
-                        そして、みなさんの 2014/4/1 が良い日になりますように。なお、私は課題が終わりそうにありません。
-                    </p>
-                    <p>
-                        azyobuzin
-                    </p>
-                </div>
-            </section>
+                </section>
+
+                <section>
+                    <h1>要望がありますか？</h1>
+                    <p>新たな画像共有サービスへの対応依頼は<a href="https://docs.google.com/forms/d/1BucL8mLQqDSVZyQSUu7WEbVzU6UHyWzhOFY68s4iqu8/viewform">こちらのアンケートフォーム</a>へ、その他のご意見・ご要望は Twitter @<a href="https://twitter.com/imgazyobuzi">imgazyobuzi</a> までお願いいたします。</p>
+                </section>
+
+                <!-- admax -->
+                <script type="text/javascript" src="http://adm.shinobi.jp/s/bb236a451b59de933ca77e0878d16c4b"></script>
+                <!-- admax -->
+            </div>
+
+            <div id="sidebar">
+                <!-- admax -->
+                <script type="text/javascript" src="http://adm.shinobi.jp/s/b3276051a7d16c2708bc85aed76e974f"></script>
+                <!-- admax -->
+                <div class="g-plus" data-href="//plus.google.com/106845759184886636443" data-rel="publisher"></div>
+                <a class="twitter-timeline" href="https://twitter.com/imgazyobuzi" data-widget-id="338281746556674048">@imgazyobuzi からのツイート</a>
+            </div>
         </div>
+
+        <footer>
+            <p>©2012-2013 azyobuzin</p>
+            <p>サービス名は各運営会社の登録商標です。</p>
+        </footer>
+
+        <script type="text/javascript">
+          window.___gcfg = {lang: 'ja'};
+
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script src="Scripts/jquery-2.0.0.min.js"></script>
+        <script src="Scripts/bootstrap.min.js"></script>
     </body>
 </html>
